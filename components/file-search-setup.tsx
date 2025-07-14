@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useToolsStore from "@/stores/useToolsStore";
 import FileUpload from "@/components/file-upload";
 import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 import { CircleX } from "lucide-react";
 import { TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Tooltip } from "./ui/tooltip";
@@ -72,19 +73,21 @@ export default function FileSearchSetup() {
                 placeholder="ID (vs_XXXX...)"
                 value={newStoreId}
                 onChange={(e) => setNewStoreId(e.target.value)}
-                className="border border-zinc-300 rounded text-sm bg-white"
+                className="border border-zinc-300 rounded text-sm bg-background"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleAddStore(newStoreId);
                   }
                 }}
               />
-              <div
-                className="text-zinc-400 text-sm px-1 transition-colors hover:text-zinc-600 cursor-pointer"
+              <Button
+                type="button"
+                variant="secondary"
+                className="text-sm"
                 onClick={() => handleAddStore(newStoreId)}
               >
                 Add
-              </div>
+              </Button>
             </div>
           )}
         </div>

@@ -9,7 +9,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
-import { FilePlus2, Plus, Trash2, CircleX } from "lucide-react";
+import { FilePlus2, Plus, Trash2, CircleX, Loader2 } from "lucide-react";
 import { useDropzone } from "react-dropzone";
 import { Input } from "./ui/input";
 import {
@@ -174,10 +174,10 @@ export default function FileUpload({
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-        <div className="bg-white rounded-full flex items-center justify-center py-1 px-3 border border-zinc-200 gap-1 font-medium text-sm cursor-pointer hover:bg-zinc-50 transition-all">
+        <Button variant="secondary" className="gap-1" type="button">
           <Plus size={16} />
           Upload
-        </div>
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[500px] md:max-w-[600px] max-h-[80vh] overflow-y-scrollfrtdtd">
         <form onSubmit={handleSubmit}>
@@ -265,8 +265,14 @@ export default function FileUpload({
             )}
           </div>
           <DialogFooter>
-            <Button type="submit" disabled={uploading}>
-              {uploading ? "Uploading..." : "Add"}
+            <Button type="submit" disabled={uploading} className="flex gap-2">
+              {uploading ? (
+                <>
+                  <Loader2 className="animate-spin size-4" /> Uploading...
+                </>
+              ) : (
+                "Add"
+              )}
             </Button>
           </DialogFooter>
         </form>
