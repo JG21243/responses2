@@ -8,6 +8,7 @@ import { CircleX } from "lucide-react";
 import { TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Tooltip } from "./ui/tooltip";
 import { TooltipProvider } from "./ui/tooltip";
+import { useToastStore } from "./ui/toast";
 
 export default function FileSearchSetup() {
   const { vectorStore, setVectorStore } = useToolsStore();
@@ -29,7 +30,7 @@ export default function FileSearchSetup() {
         console.log("Retrieved store:", newStore);
         setVectorStore(newStore);
       } else {
-        alert("Vector store not found");
+        useToastStore.getState().showToast("Vector store not found");
       }
     }
   };
@@ -52,12 +53,13 @@ export default function FileSearchSetup() {
                 </div>
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      <CircleX
-                        onClick={() => unlinkStore()}
-                        size={16}
-                        className="cursor-pointer text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
-                      />
+                  <TooltipTrigger asChild>
+                      <button onClick={() => unlinkStore()} aria-label="Unlink store">
+                        <CircleX
+                          size={16}
+                          className="text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
+                        />
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent className="mr-2">
                       <p>Unlink vector store</p>

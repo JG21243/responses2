@@ -102,8 +102,9 @@ const Chat: React.FC<ChatProps> = ({
                   </div>
                   <button
                     disabled={!inputMessageText}
+                    aria-label="Send message"
                     data-testid="send-button"
-                    className="flex size-8 items-end justify-center rounded-full bg-black text-white transition-colors hover:opacity-70 focus-visible:outline-none focus-visible:outline-black disabled:bg-[#D7D7D7] disabled:text-[#f4f4f4] disabled:hover:opacity-100"
+                    className="flex size-8 items-end justify-center rounded-full bg-foreground text-background transition-colors hover:opacity-70 focus-visible:outline-none focus-visible:outline-foreground disabled:bg-muted disabled:text-muted-foreground disabled:hover:opacity-100"
                   onClick={() => {
                       onSendMessage(inputMessageText);
                       setinputMessageText("");

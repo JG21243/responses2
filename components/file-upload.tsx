@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useToastStore } from "@/components/ui/toast";
 import { Button } from "./ui/button";
 import { FilePlus2, Plus, Trash2, CircleX, Loader2 } from "lucide-react";
 import { useDropzone } from "react-dropzone";
@@ -92,7 +93,7 @@ export default function FileUpload({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!file) {
-      alert("Please select a file to upload.");
+      useToastStore.getState().showToast("Please select a file to upload.");
       return;
     }
     setUploading(true);
@@ -165,7 +166,9 @@ export default function FileUpload({
       setDialogOpen(false);
     } catch (error) {
       console.error("Error during file upload process:", error);
-      alert("There was an error processing your file. Please try again.");
+      useToastStore
+        .getState()
+        .showToast("There was an error processing your file. Please try again.");
     } finally {
       setUploading(false);
     }
@@ -213,11 +216,12 @@ export default function FileUpload({
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <CircleX
-                          onClick={() => onUnlinkStore()}
-                          size={16}
-                          className="cursor-pointer text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
-                        />
+                        <button onClick={() => onUnlinkStore()} aria-label="Unlink store">
+                          <CircleX
+                            size={16}
+                            className="text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
+                          />
+                        </button>
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Unlink vector store</p>
@@ -235,11 +239,9 @@ export default function FileUpload({
                 <div className="flex items-center mt-2">
                   <div className="text-zinc-900 mr-2">{file.name}</div>
 
-                  <Trash2
-                    onClick={removeFile}
-                    size={16}
-                    className="cursor-pointer text-zinc-900"
-                  />
+                  <button onClick={removeFile} aria-label="Remove file">
+                    <Trash2 size={16} className="text-zinc-900" />
+                  </button>
                 </div>
               </div>
             ) : (
