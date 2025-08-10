@@ -1,0 +1,23 @@
+{
+  "instructions": [
+    "This directory contains Zustand store definitions for global state management.",
+    "Follow these patterns:",
+    "- Use Zustand for lightweight state management",
+    "- Define store interfaces with proper TypeScript typing",
+    "- Create focused stores for specific domains (conversations, configuration, etc.)",
+    "- Use immer-style updates for complex state changes",
+    "- Export stores as default exports with descriptive names",
+    "- Keep store logic simple and focused on state management",
+    "- Use proper action naming conventions (verbs for state changes)",
+    "- Implement proper state persistence where needed",
+    "- Follow the established patterns for conversation state management"
+  ],
+  "context": {
+    "state_management": "Zustand for client-side state",
+    "patterns": {
+      "store_definition": "Use create() function with proper typing",
+      "actions": "Define clear action methods for state updates",
+      "selectors": "Provide getter methods for computed state"
+    }
+  }
+}

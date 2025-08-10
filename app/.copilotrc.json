@@ -1,0 +1,31 @@
+{
+  "instructions": [
+    "This directory contains Next.js App Router pages and API routes.",
+    "Follow these patterns:",
+    "- Use Next.js 15 App Router conventions for file-based routing",
+    "- API routes should be in api/ subdirectory with route.ts files",
+    "- Implement proper HTTP methods (GET, POST, PUT, DELETE) as named exports",
+    "- Use Next.js Request/Response objects for API handling",
+    "- Implement proper error handling and status codes",
+    "- Use TypeScript for request/response typing",
+    "- Follow the established patterns for OpenAI API integration",
+    "- Implement streaming responses where appropriate",
+    "- Use proper middleware and error boundaries",
+    "- Handle CORS and security headers appropriately",
+    "- Validate request bodies and query parameters",
+    "- Use environment variables for configuration"
+  ],
+  "context": {
+    "api_routes": {
+      "turn_response": "Main chat completion endpoint with streaming",
+      "vector_stores": "File and vector store management",
+      "functions": "Custom function implementations for tool calls",
+      "container_files": "File content retrieval"
+    },
+    "patterns": {
+      "streaming": "Use ReadableStream for response streaming",
+      "error_handling": "Return proper HTTP status codes with error messages",
+      "openai_integration": "Use established OpenAI client patterns"
+    }
+  }
+}

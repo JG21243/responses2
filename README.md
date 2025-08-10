@@ -58,6 +58,18 @@ This app is meant to be used as a starting point to build a conversational assis
 
    The app will be available at [`http://localhost:3000`](http://localhost:3000).
 
+## GitHub Copilot Configuration
+
+This repository is configured with GitHub Copilot instructions to help with development. The configuration includes:
+
+- **Project-specific context**: Understanding of the OpenAI Responses API integration and Next.js architecture
+- **Coding standards**: TypeScript best practices, React patterns, and Tailwind CSS conventions
+- **Component guidelines**: Specific instructions for React components and UI patterns
+- **API development**: Patterns for Next.js API routes and OpenAI integration
+- **Utility functions**: Guidelines for shared logic and tool implementations
+
+The configuration files (`.copilotrc.json`) are located in the root directory and key subdirectories to provide context-aware assistance.
+
 ## Contributing
 
 You are welcome to open issues or submit PRs to improve this app, however, please note that we may not review all suggestions.
