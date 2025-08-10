@@ -1,0 +1,30 @@
+{
+  "instructions": [
+    "This directory contains React components for the conversational interface.",
+    "Follow these component-specific guidelines:",
+    "- Use TypeScript interfaces for all props and component state",
+    "- Implement proper React patterns with hooks (useState, useEffect, etc.)",
+    "- Use Tailwind CSS classes following the existing design system",
+    "- Components should be functional components with proper JSX return types",
+    "- Use proper event handlers and form validation",
+    "- Implement loading states and error handling for async operations",
+    "- Follow accessibility best practices with proper ARIA attributes",
+    "- Use the shadcn/ui component library patterns for consistent styling",
+    "- Export components as default exports",
+    "- Use descriptive component and prop names",
+    "- Implement proper TypeScript typing for OpenAI API data structures",
+    "- Use React.memo for performance optimization when appropriate",
+    "- Follow the existing patterns for message rendering and tool call display"
+  ],
+  "context": {
+    "ui_library": "shadcn/ui with Radix UI primitives",
+    "styling": "Tailwind CSS with custom design tokens",
+    "key_components": {
+      "assistant.tsx": "Main chat interface component",
+      "message.tsx": "Individual message rendering with annotations",
+      "tool-call.tsx": "Tool call execution display",
+      "file-upload.tsx": "File upload functionality",
+      "functions-view.tsx": "Function call visualization"
+    }
+  }
+}

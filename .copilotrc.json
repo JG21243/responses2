@@ -1,0 +1,42 @@
+{
+  "instructions": [
+    "This is a Next.js TypeScript starter application for the OpenAI Responses API with multi-turn conversation handling, web search, file search, and function calling capabilities.",
+    "Follow these conventions and best practices:",
+    "- Use TypeScript with strict typing throughout the codebase",
+    "- Follow Next.js 15 App Router patterns for file structure and routing",
+    "- Use React functional components with hooks for state management",
+    "- Apply Tailwind CSS classes for styling, following the existing design patterns",
+    "- Use Zustand for global state management (see stores/ directory)",
+    "- Implement proper error handling for API calls and OpenAI operations",
+    "- Follow the existing pattern for tool integration in lib/tools/",
+    "- Use the established file structure: app/ for pages and API routes, components/ for reusable components, lib/ for utilities",
+    "- When working with OpenAI API, use the established assistant.ts patterns for message handling and streaming",
+    "- For new components, use the shadcn/ui component library patterns found in components/ui/",
+    "- Maintain accessibility standards with proper ARIA attributes and semantic HTML",
+    "- Use proper TypeScript interfaces for data structures, especially for OpenAI API responses",
+    "- Follow the existing ESLint configuration and coding standards",
+    "- When adding new tools or functions, update both the functions mapping and tool definitions",
+    "- Use environment variables for sensitive configuration (OPENAI_API_KEY, etc.)",
+    "- Implement proper loading states and error boundaries for user interactions",
+    "- Follow the existing patterns for file uploads and vector store management"
+  ],
+  "context": {
+    "purpose": "OpenAI Responses API starter application for building conversational assistants",
+    "architecture": "Next.js 15 with TypeScript, App Router, Tailwind CSS, Zustand state management",
+    "key_features": [
+      "Multi-turn conversation handling",
+      "Web search tool integration", 
+      "File search with vector stores",
+      "Function calling capabilities",
+      "Streaming responses",
+      "File upload and management",
+      "Responsive chat interface"
+    ],
+    "development_workflow": {
+      "build": "npm run build",
+      "dev": "npm run dev", 
+      "lint": "npm run lint",
+      "setup": "Copy .env.example to .env and add OPENAI_API_KEY"
+    }
+  }
+}

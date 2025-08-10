@@ -1,0 +1,28 @@
+{
+  "instructions": [
+    "This directory contains utility functions, tools, and shared logic.",
+    "Follow these guidelines:",
+    "- Implement pure functions where possible for better testability",
+    "- Use proper TypeScript typing for all function parameters and return types",
+    "- Export functions with clear, descriptive names",
+    "- Implement proper error handling and validation",
+    "- Follow the established patterns for OpenAI API integration",
+    "- Create reusable utilities that can be shared across components",
+    "- Document complex logic with clear comments",
+    "- Use consistent naming conventions for utility functions",
+    "- Implement proper async/await patterns for asynchronous operations",
+    "- Follow the tool integration patterns in tools/ subdirectory"
+  ],
+  "context": {
+    "key_files": {
+      "assistant.ts": "Core assistant logic and message handling",
+      "utils.ts": "General utility functions",
+      "tools/": "Tool integration and handling logic"
+    },
+    "patterns": {
+      "tool_handling": "Use handleTool function for tool call processing",
+      "message_processing": "Follow ContentItem and MessageItem interfaces",
+      "error_handling": "Implement proper try-catch blocks for async operations"
+    }
+  }
+}

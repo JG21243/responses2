@@ -1,0 +1,26 @@
+{
+  "instructions": [
+    "This directory contains application configuration files and constants.",
+    "Follow these guidelines:",
+    "- Use TypeScript for all configuration files",
+    "- Export constants with descriptive names in UPPER_CASE",
+    "- Keep sensitive configuration in environment variables",
+    "- Document configuration options with clear comments",
+    "- Use proper TypeScript typing for configuration objects",
+    "- Group related constants together in logical files",
+    "- Provide sensible defaults for optional configuration",
+    "- Use consistent naming patterns across configuration files"
+  ],
+  "context": {
+    "files": {
+      "constants.ts": "Application constants including model settings and prompts",
+      "functions.ts": "Function mappings for tool calls",
+      "tools-list.ts": "Available tools configuration"
+    },
+    "patterns": {
+      "model_config": "Use MODEL constant for OpenAI model selection",
+      "prompts": "Define system prompts in DEVELOPER_PROMPT",
+      "functions": "Map function names to implementations in functionsMap"
+    }
+  }
+}
