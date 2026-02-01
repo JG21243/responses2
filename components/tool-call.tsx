@@ -25,11 +25,11 @@ function ApiCallCell({ toolCall }: ToolCallProps) {
             </div>
           </div>
 
-          <div className="bg-[#fafafa] rounded-xl py-2 ml-4 mt-2">
+          <div className="bg-muted rounded-xl py-2 ml-4 mt-2">
             <div className="max-h-96 overflow-y-scroll text-xs border-b mx-6 p-2">
               <SyntaxHighlighter
                 customStyle={{
-                  backgroundColor: "#fafafa",
+                  backgroundColor: "hsl(var(--muted))",
                   padding: "8px",
                   paddingLeft: "0px",
                   marginTop: 0,
@@ -45,7 +45,7 @@ function ApiCallCell({ toolCall }: ToolCallProps) {
               {toolCall.output ? (
                 <SyntaxHighlighter
                   customStyle={{
-                    backgroundColor: "#fafafa",
+                    backgroundColor: "hsl(var(--muted))",
                     padding: "8px",
                     paddingLeft: "0px",
                     marginTop: 0,
@@ -110,11 +110,11 @@ function McpCallCell({ toolCall }: ToolCallProps) {
             </div>
           </div>
 
-          <div className="bg-[#fafafa] rounded-xl py-2 ml-4 mt-2">
+          <div className="bg-muted rounded-xl py-2 ml-4 mt-2">
             <div className="max-h-96 overflow-y-scroll text-xs border-b mx-6 p-2">
               <SyntaxHighlighter
                 customStyle={{
-                  backgroundColor: "#fafafa",
+                  backgroundColor: "hsl(var(--muted))",
                   padding: "8px",
                   paddingLeft: "0px",
                   marginTop: 0,
@@ -130,7 +130,7 @@ function McpCallCell({ toolCall }: ToolCallProps) {
               {toolCall.output ? (
                 <SyntaxHighlighter
                   customStyle={{
-                    backgroundColor: "#fafafa",
+                    backgroundColor: "hsl(var(--muted))",
                     padding: "8px",
                     paddingLeft: "0px",
                     marginTop: 0,
@@ -178,11 +178,11 @@ function CodeInterpreterCell({ toolCall }: ToolCallProps) {
             </div>
           </div>
         </div>
-        <div className="bg-[#fafafa] rounded-xl py-2 ml-4 mt-2">
+        <div className="bg-muted rounded-xl py-2 ml-4 mt-2">
           <div className="mx-6 p-2 text-xs">
             <SyntaxHighlighter
               customStyle={{
-                backgroundColor: "#fafafa",
+                backgroundColor: "hsl(var(--muted))",
                 padding: "8px",
                 paddingLeft: "0px",
                 marginTop: 0,
@@ -201,7 +201,7 @@ function CodeInterpreterCell({ toolCall }: ToolCallProps) {
                 key={f.file_id}
                 href={`/api/container_files/content?file_id=${f.file_id}${f.container_id ? `&container_id=${f.container_id}` : ""}${f.filename ? `&filename=${encodeURIComponent(f.filename)}` : ""}`}
                 download
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#ededed] text-xs text-zinc-500"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-muted text-xs text-zinc-500"
               >
                 {f.filename || f.file_id}
                 <Download size={12} />

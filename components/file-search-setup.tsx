@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import useToolsStore from "@/stores/useToolsStore";
 import FileUpload from "@/components/file-upload";
 import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 import { CircleX } from "lucide-react";
 import { TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Tooltip } from "./ui/tooltip";
 import { TooltipProvider } from "./ui/tooltip";
+import { useToastStore } from "./ui/toast";
 
 export default function FileSearchSetup() {
   const { vectorStore, setVectorStore } = useToolsStore();
@@ -28,7 +30,7 @@ export default function FileSearchSetup() {
         console.log("Retrieved store:", newStore);
         setVectorStore(newStore);
       } else {
-        alert("Vector store not found");
+        useToastStore.getState().showToast("Vector store not found");
       }
     }
   };
@@ -51,12 +53,13 @@ export default function FileSearchSetup() {
                 </div>
                 <TooltipProvider>
                   <Tooltip>
-                    <TooltipTrigger asChild>
-                      <CircleX
-                        onClick={() => unlinkStore()}
-                        size={16}
-                        className="cursor-pointer text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
-                      />
+                  <TooltipTrigger asChild>
+                      <button onClick={() => unlinkStore()} aria-label="Unlink store">
+                        <CircleX
+                          size={16}
+                          className="text-zinc-400 mb-0.5 shrink-0 mt-0.5 hover:text-zinc-700 transition-all"
+                        />
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent className="mr-2">
                       <p>Unlink vector store</p>
@@ -72,19 +75,21 @@ export default function FileSearchSetup() {
                 placeholder="ID (vs_XXXX...)"
                 value={newStoreId}
                 onChange={(e) => setNewStoreId(e.target.value)}
-                className="border border-zinc-300 rounded text-sm bg-white"
+                className="border border-zinc-300 rounded text-sm bg-background"
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     handleAddStore(newStoreId);
                   }
                 }}
               />
-              <div
-                className="text-zinc-400 text-sm px-1 transition-colors hover:text-zinc-600 cursor-pointer"
+              <Button
+                type="button"
+                variant="secondary"
+                className="text-sm"
                 onClick={() => handleAddStore(newStoreId)}
               >
                 Add
-              </div>
+              </Button>
             </div>
           )}
         </div>

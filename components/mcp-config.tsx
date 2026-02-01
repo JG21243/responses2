@@ -36,7 +36,7 @@ export default function McpConfig() {
             id="server_label"
             type="text"
             placeholder="deepwiki"
-            className="bg-white border text-sm flex-1 text-zinc-900 placeholder:text-zinc-400"
+            className="bg-background border text-sm flex-1 text-foreground placeholder:text-zinc-400"
             value={mcpConfig.server_label}
             onChange={(e) =>
               setMcpConfig({ ...mcpConfig, server_label: e.target.value })
@@ -51,7 +51,7 @@ export default function McpConfig() {
             id="server_url"
             type="text"
             placeholder="https://example.com/mcp"
-            className="bg-white border text-sm flex-1 text-zinc-900 placeholder:text-zinc-400"
+            className="bg-background border text-sm flex-1 text-foreground placeholder:text-zinc-400"
             value={mcpConfig.server_url}
             onChange={(e) =>
               setMcpConfig({ ...mcpConfig, server_url: e.target.value })
@@ -66,7 +66,7 @@ export default function McpConfig() {
             id="allowed_tools"
             type="text"
             placeholder="tool1,tool2"
-            className="bg-white border text-sm flex-1 text-zinc-900 placeholder:text-zinc-400"
+            className="bg-background border text-sm flex-1 text-foreground placeholder:text-zinc-400"
             value={mcpConfig.allowed_tools}
             onChange={(e) =>
               setMcpConfig({ ...mcpConfig, allowed_tools: e.target.value })
